@@ -28,3 +28,34 @@
    - 不要人肉递归
    - 找最近最简方法，将其拆解为可重复解决的子问题。
    - 数学归纳法思维
+
+## 分治和回溯
+1. 分治和回溯实际上就是递归，只不过它是递归的一种复杂的形式；
+2. 重复性有最优重复性和最近重复性
+    - 最优：就是动态规划
+    - 最近：根据重复性如何构造和分解，就有分治和回溯
+### 分治
+1. 思想：找重复性 -- 分解若干子问题 -- 组合结果
+2. 分治模版：和泛型递归模版区别，就在于组合一下子问题的结果
+    ```javascript
+    function divideConquer(problem, param1, param2) {
+      // recursion terminator
+      if (!problem) {
+         return;
+      }
+      // prepar data
+      const data = preparData(problem);
+      const subProblems = splitData(problem, data);
+      // conquer sunproblems
+      const subresult1 = divideConquer(subproblems[0], '...');
+      const subresult2 = divideConquer(subproblems[2], '...');
+      const subresult3 = divideConquer(subproblems[3], '...');
+      // process and generator current result
+      const result = processResults(subresult1, subresult2, subresult3);
+
+      // revert the current level status if needed
+    }
+    ```
+### 回溯
+1. 就是一层层的不断去试错
+2. 一般就是最简单的泛型递归
