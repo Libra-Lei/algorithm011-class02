@@ -69,3 +69,26 @@ function bfs(graph, start, end) {
    - 但实际工程和生活中，贪心算法一般不能求得我们想要的答案
    - 一旦一个问题可以通过贪心算法来解决，那么贪心算法一般是这个问题的最好办法
    - 由于贪心的高效性和一般求得结果比较接近最优解，所以贪心算法可以用作辅助算法，或者解决一些结果要求不是特别精确的问题
+
+## 二分查找
+1. 使用二分查找的前提条件
+   - 目标函数单调性（单调递增或单调递减）
+   - 存在上下界（bounded）
+   - 可以通过索引访问元素 (index assessible)
+2. 代码模版
+```javascript
+function binarySearch(array, target) {
+  let left = 0, right = array.length - 1;
+  while (left <= right) {
+    let mid = (left + right) / 2;
+    if (array[mid] === target) {
+      // find result
+      break;
+    } else if (array[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+}
+```
