@@ -31,3 +31,10 @@
 3. x & (x - 1) 清零最低位的 1
 4. x & -x 得到最低位的 1
 5. x & ~x => 0
+
+## 布隆过滤器
+
+## LRU 缓存
+
+## 初级排序算法和高级排序算法
+[这部分在脑图中](https://github.com/Libra-Lei/algorithm011-class02/blob/master/Week_01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.xmind)
